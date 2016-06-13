@@ -21,3 +21,16 @@ class MQt(models.Model):
         return self.question
 
 admin.site.register(MQt)
+
+class MRZRK(models.Model):
+    question = models.TextField()
+    solution = models.TextField()
+
+    def __unicode__(self):
+        return self.question
+
+admin.site.register(MRZRK)
+
+
+
+
