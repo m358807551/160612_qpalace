@@ -9,7 +9,6 @@ def randquestionid(database):
 
 nowquestionid = 0 
 nAnswerSum = 1
-nQuestionSum = 0 
 nRightSum = 0
 
 # Create your views here.
@@ -17,12 +16,11 @@ def index(request, database):
     print 'database = ', database
     global nowquestionid
     global nAnswerSum
-    global nQuestionSum
     global nRightSum
     exec('question = %s.objects.all()[nowquestionid].question' %database)
-    exec('nQuestionNum = len(%s.objects.all())' %database)
+    exec('nQuestionSum = len(%s.objects.all())' %database)
     return render_to_response('index.html', {
-	'database': database,
+	    'database': database,
         'question': question,
         'nQuestionSum': nQuestionSum,
         'nAnswerSum': nAnswerSum,
