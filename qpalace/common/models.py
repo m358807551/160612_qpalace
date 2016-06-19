@@ -31,6 +31,21 @@ class MRZRK(models.Model):
 
 admin.site.register(MRZRK)
 
+class MPython(models.Model):
+    question = models.TextField()
+    solution = models.TextField()
 
+    def __unicode__(self):
+        return self.question
+    
+admin.site.register(MPython)
 
+class MNLP(models.Model):
+    question = models.TextField()
+    solution = models.TextField()
+
+    def __unicode__(self):
+        return self.question
+    
+admin.site.register(MNLP)
 
