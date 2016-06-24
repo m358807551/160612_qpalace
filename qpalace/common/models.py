@@ -49,3 +49,11 @@ class MNLP(models.Model):
     
 admin.site.register(MNLP)
 
+class MVim(models.Model):
+    question = models.TextField()
+    solution = models.TextField()
+
+    def __unicode__(self):
+        return self.question
+    
+admin.site.register(MVim)
