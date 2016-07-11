@@ -58,6 +58,7 @@ class MVim(models.Model):
     
 admin.site.register(MVim)
 
+
 class MW3m(models.Model):
     question = models.TextField()
     solution = models.TextField()
@@ -66,6 +67,7 @@ class MW3m(models.Model):
         return self.question
     
 admin.site.register(MW3m)
+
 
 class MGit(models.Model):
     question = models.TextField()
@@ -76,11 +78,17 @@ class MGit(models.Model):
     
 admin.site.register(MGit)
 
+
 class MDjango(models.Model):
     question = models.TextField()
     solution = models.TextField()
 
     def __unicode__(self):
         return self.question
-    
-admin.site.register(MDjango)
+
+
+class DjangoAdmin(admin.ModelAdmin):
+    search_fields = ["question"]
+
+
+admin.site.register(MDjango, DjangoAdmin)
