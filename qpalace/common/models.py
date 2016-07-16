@@ -75,3 +75,18 @@ class MGit(models.Model):
         return self.question
     
 admin.site.register(MGit)
+
+
+class MEnglish(models.Model):
+    question = models.TextField()
+    solution = models.TextField()
+
+    def __unicode__(self):
+        return self.question
+
+
+class EnglishAdmin(admin.ModelAdmin):
+    list_display = ["question", "solution"]
+    search_fields = ["question"]
+    
+admin.site.register(MEnglish, EnglishAdmin)
