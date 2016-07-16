@@ -75,3 +75,13 @@ class MGit(models.Model):
         return self.question
     
 admin.site.register(MGit)
+
+
+class MGoogle(models.Model):
+    question = models.TextField()
+    solution = models.TextField()
+
+    def __unicode__(self):
+        return self.question
+    
+admin.site.register(MGoogle)
